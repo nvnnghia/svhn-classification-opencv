@@ -1,7 +1,7 @@
 # svhn-classification-opencv
 SVHN classification using tensorflow model in opencv.
 
-## A TensorFlow implementation of Multi-digit Number Recognition from Street View Imagery using Deep Convolutional Neural Networks
+### A TensorFlow implementation of Multi-digit Number Recognition from Street View Imagery using Deep Convolutional Neural Networks
 
 ## Setup
 Clone the source code
@@ -50,7 +50,11 @@ $ tensorboard --logdir ./logs
 
 ## Inferene using opencv
 1)Extract .pb file from checkpoint
+
 Go to log directory: python3 export_graph.py
+
 2)Optimize graph for opencv usage.
+
 Go to log directory: python3 optimize_for_inference.py --input output_graph.pb --output opt_model6.pb --input_names shuffle_batch --output_names digit1/dense/BiasAdd,digit2/dense/BiasAdd,digit3/dense/BiasAdd,digit4/dense/BiasAdd,digit5/dense/BiasAdd
+
 3) Run inferenec code: python3 test_cv1.py
